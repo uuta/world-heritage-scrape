@@ -1,0 +1,10 @@
+version: "3"
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./build/Dockerfile
+    tty: true # コンテナの永続化
+    working_dir: /app
+    volumes:
+      - .:/app
