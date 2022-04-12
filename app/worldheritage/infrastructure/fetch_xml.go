@@ -4,10 +4,10 @@ import (
 	"encoding/xml"
 	"fmt"
 	"log"
-	"world-heritage-scrape/app/domain"
+	"world-heritage-scrape/app/worldheritage/entity"
 )
 
-var xmlBytes domain.XmlBytes
+var xmlBytes entity.XmlBytes
 
 func FetchXml(url string) {
 	var err error
@@ -18,7 +18,7 @@ func FetchXml(url string) {
 }
 
 func ParseXml() {
-	var result domain.XmlData
+	var result entity.XmlData
 	xml.Unmarshal(xmlBytes, &result)
 	for i := 0; i < len(result.Rows); i++ {
 		fmt.Printf("Category :%v\n", result.Rows[i].Category)
