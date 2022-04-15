@@ -1,7 +1,10 @@
 package handler
 
-import "world-heritage-scrape/app/worldheritage/usecase"
+import (
+	"net/http"
+	"world-heritage-scrape/app/worldheritage/usecase"
+)
 
-func PutWorldHeritageHandler() {
+func PutWorldHeritageHandler(w http.ResponseWriter, r *http.Request) {
 	usecase.PutWorldHeritage()
 }
